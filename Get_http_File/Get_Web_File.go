@@ -34,7 +34,7 @@ func main() {
 		fmt.Println(time.Now().Format("FileTime：2006,01,02,15:04:05")) // Now File Download Time
 
 		if filehash != oldFileHash {
-			cmd := exec.Command("gedit", localFileName) //Start Download File
+			cmd := exec.Command("powershell.exe", "start", localFileName) //Start Download File Window command sFormat: exec.Command("powershell.exe", "command", "option")
 			out, err := cmd.CombinedOutput()
 			if err != nil {
 				log.Fatalf("cmd.Start() failed with %s\n", err)
