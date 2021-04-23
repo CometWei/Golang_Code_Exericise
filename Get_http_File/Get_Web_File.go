@@ -16,7 +16,7 @@ func main() {
 	fileUrl := "http://ftp.twaren.net/robots.txt" // Download File Url
 	fileName := "robots.txt"                      // Download File Name
 	localFileName := "./robots.txt"
-	oldFileHash := "d7b20f933be6cdae41efbe75548eba5f" //7zip 7z1900-x64.exe Hash
+	oldFileHash := "d7b20f933be6cdae41efbe75548eba5f" // 7zip 7z1900-x64.exe Hash
 
 	for range time.Tick(time.Minute * 1) { // Timing For loop Format:time.'time unit' * Quantity
 		err := DownloadFile(fileName, fileUrl)
@@ -24,8 +24,8 @@ func main() {
 			panic(err)
 		}
 
-		fmt.Println("Downloaded：" + fileUrl)
-		// File Download Source
+		fmt.Println("Downloaded：" + fileUrl) // File Download Source
+
 		filehash, err := hash_file_md5(localFileName) // Download File Hash
 		if err == nil {
 			fmt.Println("FileHash：" + filehash)
