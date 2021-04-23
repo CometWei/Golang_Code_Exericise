@@ -15,7 +15,7 @@ import (
 func main() {
 	fileUrl := "http://ftp.twaren.net/robots.txt" // Download File Url
 	fileName := "robots.txt"                      // Download File Name
-	localFileName := "./robots.txt"
+	localFileName := "./" + fileName
 	oldFileHash := "d7b20f933be6cdae41efbe75548eba5f" // 7zip 7z1900-x64.exe Hash
 
 	for range time.Tick(time.Minute * 1) { // Timing For loop Format:time.'time unit' * Quantity
