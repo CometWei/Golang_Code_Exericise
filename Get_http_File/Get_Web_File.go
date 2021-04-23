@@ -16,6 +16,7 @@ func main() {
 	fileUrl := "http://ftp.twaren.net/robots.txt" // Download File Url
 	fileName := "robots.txt"                      // Download File Name
 	localFileName := "./robots.txt"
+	oldFileHash := "d7b20f933be6cdae41efbe75548eba5f" //7zip 7z1900-x64.exe Hash
 
 	for range time.Tick(time.Minute * 1) { // Timing For loop Format:time.'time unit' * Quantity
 		err := DownloadFile(fileName, fileUrl)
@@ -32,13 +33,15 @@ func main() {
 
 		fmt.Println(time.Now().Format("FileTime：2006,01,02,15:04:05")) // Now File Download Time
 
-		cmd := exec.Command("gedit", localFileName) //Start Download File
-		out, err := cmd.CombinedOutput()
-		if err != nil {
-			log.Fatalf("cmd.Start() failed with %s\n", err)
-		}
+		if filehash != oldFileHash {
+			cmd := exec.Command("gedit", localFileName) //Start Download File
+			out, err := cmd.CombinedOutput()
+			if err != nil {
+				log.Fatalf("cmd.Start() failed with %s\n", err)
+			}
 
-		fmt.Printf(string(out))
+			fmt.Printf(string(out))
+		}
 	}
 }
 
