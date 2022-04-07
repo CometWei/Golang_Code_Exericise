@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println(strings.ToUpper("a123456789"))
+	fmt.Println(strings.ToUpper("abc123456789"))
 }
