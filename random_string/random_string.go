@@ -1,12 +1,16 @@
 package main
 
 import (
+	"fmt"
 	"math/rand"
 	"time"
 )
 
 func main() {
-	println(GetRandomString(1))
+	var qua int
+	fmt.Printf("Input Random String：")
+	fmt.Scanln(&qua)
+	fmt.Println(GetRandomString(qua))
 }
 
 func GetRandomString(l int) string {
