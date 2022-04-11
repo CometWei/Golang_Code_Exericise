@@ -7,14 +7,22 @@ import (
 )
 
 func main() {
-	var qua int
-	fmt.Printf("Input Random String：")
+	var qua, input2 int
+	var input3 string
+	fmt.Printf("輸入產生字元數：")
 	fmt.Scanln(&qua)
-	fmt.Println(GetRandomString(qua))
+	fmt.Printf("輸入產生數量：")
+	fmt.Scanln(&input2)
+	fmt.Printf("輸入前置字串：")
+	fmt.Scanln(&input3)
+	fmt.Printf("\n")
+	for a := 0; a < input2; a++ {
+		fmt.Println(input3 + GetRandomString(qua))
+	}
 }
 
 func GetRandomString(l int) string {
-	str := "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	str := "1234567890abcdf"
 	bytes := []byte(str)
 	result := []byte{}
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
